@@ -97,17 +97,6 @@ npm start
 
 Frontend will run on `http://localhost:3000`
 
-### Music Files
-
-Place MP3 files in `frontend/public/mp3s/`:
-- `happy.mp3`
-- `excited.mp3`
-- `calm.mp3`
-- `sad.mp3`
-- `angry.mp3`
-- `anxious.mp3`
-
-These are optional - the system works without music.
 
 ## Usage
 
