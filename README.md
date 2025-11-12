@@ -71,3 +71,136 @@ Resonance demonstrates full-stack orchestration by connecting React frontend, Fa
 
 ### Backend Setup
 ```bash
+cd backend
+pip install fastapi uvicorn httpx
+
+# Create .env file
+echo "GROQ_API_KEY=your_groq_api_key_here" > .env
+
+# Run backend
+uvicorn app:app --reload
+```
+
+Backend will run on `http://localhost:8000`
+
+### Frontend Setup
+```bash
+cd frontend
+npm install
+
+# Create .env file
+echo "REACT_APP_DEEPGRAM_API_KEY=your_deepgram_api_key_here" > .env
+
+# Run frontend
+npm start
+```
+
+Frontend will run on `http://localhost:3000`
+
+### Music Files
+
+Place MP3 files in `frontend/public/mp3s/`:
+- `happy.mp3`
+- `excited.mp3`
+- `calm.mp3`
+- `sad.mp3`
+- `angry.mp3`
+- `anxious.mp3`
+
+These are optional - the system works without music.
+
+## Usage
+
+1. Click "Start" to begin recording
+2. Speak naturally into your microphone
+3. Watch the visualization respond in real-time to your emotional tone
+4. Keywords and transcript appear in the bottom-left panel
+5. Click "Stop" to end recording
+
+## Emotion Mappings
+
+### Happy
+- Colors: Warm peach, soft yellow
+- Motion: Taller, bouncy bars
+- Effect: Bright, saturated display with gentle bounce animation
+
+### Excited
+- Colors: Hot magenta, electric cyan
+- Motion: Tall, chaotic, jittery bars
+- Effect: Rapid strobing and pulsing
+
+### Calm
+- Colors: Soft teal, muted sage
+- Motion: Short, smooth, gentle bars
+- Effect: Breathing animation, increased brightness
+
+### Sad
+- Colors: Deep indigo, slate blue
+- Motion: Short, slow bars
+- Effect: Blur and dimming across entire page
+
+### Angry
+- Colors: Crimson red, burnt orange
+- Motion: Tall bars with violent shaking
+- Effect: Screen shake and red flash
+
+### Anxious
+- Colors: Sickly yellow-green
+- Motion: Unstable, extreme jitter
+- Effect: Glitch and color distortion
+
+## Design Decisions
+
+### Perlin Noise
+Used `p5.noise()` to generate smooth, organic variations in bar heights rather than jarring random movements. Each bar samples from a noise field that evolves over time, creating natural wave-like patterns.
+
+### Sentence Buffering
+Analyzes complete sentences rather than fragments to prevent rapid emotion switching mid-thought. Improves accuracy and visual stability.
+
+### Emotion-Specific Behaviors
+Beyond color changes, each emotion has unique motion characteristics (jitter intensity, shake patterns, bar height multipliers) to create distinct visual signatures.
+
+### Intensity Amplification
+Higher intensity values compound emotion-specific effects - excited becomes more chaotic, calm becomes more subdued, angry shakes more violently.
+
+### Page-Wide Effects
+CSS animations applied to the entire viewport reinforce emotional tone through blur, color filters, and motion, creating an immersive experience beyond the central visualizer.
+
+## Project Structure
+```
+MemMach/
+├── backend/
+│   ├── app.py              # FastAPI server and Groq integration
+│   └── .env                # Backend environment variables
+├── frontend/
+│   ├── src/
+│   │   ├── App.js          # Main React component
+│   │   ├── App.css         # Animations and styles
+│   │   └── AudioVisualizer.js  # p5.js visualization
+│   ├── public/
+│   │   └── mp3s/           # Background music files
+│   └── .env                # Frontend environment variables
+└── README.md
+```
+
+## Demo
+
+[Link to demo video will be added here]
+
+## Requirements Met
+
+- Full-stack orchestration with real-time data flow
+- Perlin noise-driven generative visualization
+- Graceful keyword fade-in animations
+- Auto-scrolling transcript display
+- Comprehensive error handling and async management
+- Smooth color and motion transitions
+- Clean, modern UI with semi-transparent overlays
+
+## License
+
+MIT
+
+## Author
+
+Guha Mahesh - Northeastern University
