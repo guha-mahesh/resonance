@@ -98,6 +98,20 @@ npm start
 Frontend will run on `http://localhost:3000`
 
 
+### Music Files
+
+Music files are included in `frontend/public/mp3s/` and will work automatically. If you want to use your own music:
+
+1. Replace files in `frontend/public/mp3s/`
+2. Keep the same filenames:
+   - `happy.mp3`
+   - `excited.mp3`
+   - `calm.mp3`
+   - `sad.mp3`
+   - `angry.mp3`
+   - `anxious.mp3`
+3. Optionally adjust start times in `App.js` under `emotionMusic` object
+   
 ## Usage
 
 1. Click "Start" to begin recording
