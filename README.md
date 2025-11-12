@@ -200,10 +200,6 @@ MemMach/
 - Smooth color and motion transitions
 - Clean, modern UI with semi-transparent overlays
 
-## License
-
-MIT
-
 ## Author
 
 Guha Mahesh - Northeastern University
