@@ -188,7 +188,7 @@ MemMach/
 
 ## Demo
 
-[[Link to demo video will be added here]](https://youtu.be/dDiqqq7lF9w)
+[[Link to demo video]](https://youtu.be/dDiqqq7lF9w)
 
 ## Requirements Met
 
